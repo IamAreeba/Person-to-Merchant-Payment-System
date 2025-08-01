@@ -26,12 +26,27 @@
 */
 
 
-
 const express = require('express') // To get the power of express in my app
 const app = express()              // Now with app we can create server, manage middlewares etc
 
 // Since our nodemon continuously checkout only server file so we have to include alll things here
 const router = require('./router/auth-router')
+
+
+/*
+Middleware is a function that has access to the req, res, and next() objects, and it runs before the final route handler.
+Middleware in Express.js is a function that sits between the request and the response.
+    I want to get and post with JSON data but i have to define a middleware for that
+    app.use(express.json());: This line of code adds Express middleware that
+    parses incoming request bodies with JSON payloads. It's important to place this
+    before any routes that need to handle JSON data in the request body. This
+    middleware is responsible for parsing JSON data from requests, and it should be
+    applied at the beginning of your middleware stack to ensure it's available for
+    all subsequent route handlers.
+*/
+
+app.use(express.json())
+
 
 // This line tell my server that i a using router so dont use below app routes so based on thsi he jump into that particular path
 // Mount the Router: To use the router in your main Express app, u can mount it at specific URL Prefix
