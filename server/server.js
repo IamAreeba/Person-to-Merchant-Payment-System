@@ -30,6 +30,14 @@
 const express = require('express') // To get the power of express in my app
 const app = express()              // Now with app we can create server, manage middlewares etc
 
+// Since our nodemon continuously checkout only server file so we have to include alll things here
+const router = require('./router/auth-router')
+
+// This line tell my server that i a using router so dont use below app routes so based on thsi he jump into that particular path
+// Mount the Router: To use the router in your main Express app, u can mount it at specific URL Prefix
+// Mounting a router means connecting a group of related routes to the main app under a common path.
+app.use('/api/auth', router)
+
 
 app.get('/', (req, res) => {
     res.status(200).send("Welcome to Person-to-Merchant payment System by Areeba Amjad")
