@@ -11,3 +11,15 @@
 
 */
 
+// ========================== 02 ============================= //
+/*
+    Object: React Router Dom
+    . npm i react-router-dom
+    . Using flat arrow fuction
+    . main page wants default export
+    . When we export directly so we have to export it like an obj in another file
+    . Interview Question: If we do default export then how to import it in another file vice versa for default export ?
+    
+*/
+
+
