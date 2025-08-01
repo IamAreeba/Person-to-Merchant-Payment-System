@@ -9,6 +9,7 @@
         mkdir server          -> Create a server folder
         npm init -y           -> Initialize package.json
         npm i express         -> Install express
+        npm i mongoose         -> Install Database Mongodb
 
 
     app.get: Sets up a route handler for HTTP GET requests.
@@ -32,6 +33,7 @@ const app = express()              // Now with app we can create server, manage 
 // Since our nodemon continuously checkout only server file so we have to include alll things here
 const router = require('./router/auth-router')
 
+const connectDB = require(('./utils/db'))
 
 /*
 Middleware is a function that has access to the req, res, and next() objects, and it runs before the final route handler.
@@ -65,6 +67,9 @@ app.use('/api/auth', router)
 
 
 const PORT = 5000
-app.listen(PORT, () => {
-    console.log(`server is running at port http://localhost:${PORT}`)
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`server is running at port http://localhost:${PORT}`)
+    })
 })
+
