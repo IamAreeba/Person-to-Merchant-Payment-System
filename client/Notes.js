@@ -37,3 +37,41 @@
 */
 
 
+// ========================== 04 ============================= //
+/*
+    Object: Registration Page UI & stored Form data in React State Variable
+    . If we have anything in public we can directly access it 
+    . name attribute in input is very important
+    . We can see all the components in the DevTools but we dont hve any states in Register page
+    . In useState var which is hooks when we pass anything to setUser it will change the value of user
+    . People can make diff state var for diff input but we can make it together by using obj in useState and pass it to the state var e.g. user
+    . Now we have assigned the obj init we created i the user var now we have to assign it to te inputs so we used value attribute 
+    . so when we assign the value in that input then we cant write anything cuz the value we have set it but we want that if i write any value in 
+      that input the value has to be updated so we do it using "onChange" and inside that we are actually using function 
+    . onChange =  When we use that we get an event obj use console to findout inside that we have target and inside we have name thats why that 
+                  name obj is very imp and that name has to be matching with the one u describe in the schema cuz that data we have to pass in DB
+    . setUser() is our updated function. So whatever the field user targeted we have updated its value in our obj in useState 
+    . My user is obj thats why my setUser is also an obj
+    . SpreadOperator(...) = If i want my prev data to be preserved i can use this operator. e.g. if i change phone value then remaining values
+                            like phone, email will reaim intacked
+    . But our name attribute is diff every time in input so when i get the value how will i set it to correct input.name we have to dynamically
+      set that using this [user]: value. If we dont use that [] then we are gettiga value but not sure on which name we have to add it
+    . Aftre doing every thing we get the value so in DevTools see components Register u wiil see the data in hooks dynamic
+    . Whatever the form value user have filled we have stored it in State var see hooks 
+    . So in postmon req.body we have passed the data to backend in mongodb now we are doing it vis state in frontend.We have go just connect
+      frontend with backend but we want the updated data of frontend also thats why we store it in state w
+    . onSubmit: form have an event onSubmit whenever user fill the form. Also prevent the page reload cuz by default when we click the btn it 
+                reloads page   
+    . We have stored the data in state object and onSubmit we are getting the data 
+    . {
+          How data dynamically rendered
+          ..user,          password (init value ="")
+                           email    (init value ="")
+                           name     (init value ="Areeba")
+                           
+          [name]: value,   
+          [phone]: 234,    phone    (init value = "12"  updated value = "234")
+      }
+    . So whatever the value we target he will update dynamically
+*/
+

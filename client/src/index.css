@@ -6,9 +6,9 @@
 }
 
 
-/* html{
+html{
   font-size: 62.5%;
-} */
+}
 
 
 
@@ -16,6 +16,8 @@
   max-width: 140rem;
   padding: 4rem 2.4rem;
   margin: 0 auto;
+  font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
 }
 
 li{
@@ -24,18 +26,15 @@ li{
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  --bg-color: #f4f3ff;
+  --btn-color: #646cff;
+  --dark-color: #242424;
+  --helper-color: #99b9ff;
 
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -56,8 +55,32 @@ a:hover {
 } */
 
 h1 {
-  font-size: 3.2em;
+  font-size: 5.4em;
   line-height: 1.1;
+  font-weight: bold;
+}
+
+p,
+li,
+label,
+input,
+textarea {
+  font-size: 1.8rem;
+  line-height: 1.56;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.06rem;
+}
+
+li{
+  list-style: none;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  color: var(--btn-color);
+  text-decoration: inherit;
 }
 
 /* button {

@@ -11,7 +11,7 @@ export const Navbar = () => {
             <header>
                 <div className="container">
                     <div className="logo-brand">
-                        P2M Payment System
+                        <NavLink to="/" >  P2M Payment System  </NavLink>
                     </div>
 
                     <nav>
