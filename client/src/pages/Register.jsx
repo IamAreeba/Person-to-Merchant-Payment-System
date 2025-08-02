@@ -29,7 +29,7 @@ export const Register = () => {
 
     // Handling the form submit
     const handleSubmit = (e) => {
-        console.log("User Info: ", user) 
+        console.log("User Info: ", ) 
         e.preventDefault()
         
     }
