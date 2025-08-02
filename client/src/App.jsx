@@ -7,6 +7,7 @@ import { Services } from "./pages/Services"
 import { Register } from "./pages/Register"
 import { Login } from "./pages/Login"
 import { Contact } from "./pages/Contact"
+import { Navbar } from "./components/Navbar"
 
 
 const App = () => {
@@ -15,6 +16,8 @@ const App = () => {
     
     <>
         <BrowserRouter>
+
+          <Navbar />
 
           <Routes>
 
