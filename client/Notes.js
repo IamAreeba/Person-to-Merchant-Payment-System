@@ -75,8 +75,18 @@
     . So whatever the value we target he will update dynamically
 */
 
+
+
 // ========================== 05 ============================= //
 /*
     Object: Storing Login Form Data in React State
     . Same as the work we did in Registeration
+*/
+
+
+
+// ========================== 06 ============================= //
+/*
+    Object: Home Page using React
+    . We have multiple btns so we called it Reusable components 
 */
