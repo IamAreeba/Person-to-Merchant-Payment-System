@@ -38,20 +38,21 @@ export const Register = () => {
         <>
             <section>
                 <main>
-                    <div className="section-registeration">
+                    <div className="section-registration">
                         <div className="container grid grid-two-cols ">
 
-                            <div className="registeration-image">
+                            <div className="registration-image">
                                 <img 
                                     src="/images/register.png" 
-                                    alt="a girl is trying to do registeration"
-                                    width="500"
-                                    height="500" />
+                                    alt="a girl is trying to do registration"
+                                    // width="20"
+                                    // height="20" 
+                                />
                             </div>
 
-                            {/* Lets tackle registeration form */}
-                            <div className="registeration-form">
-                                <h1> Registeration Form </h1>
+                            {/* Lets tackle registration form */}
+                            <div className="registration-form">
+                                <h1 className="main-heading mb3" > registration Form </h1>
                                 <br />
 
 

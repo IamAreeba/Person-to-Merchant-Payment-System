@@ -29,21 +29,21 @@ export const Login = () => {
         <>
             <section>
                 <main>
-                    <div className="section-login">
+                    <div className="section-registration">
                         <div className="container grid grid-two-cols ">
 
-                            <div className="login-image">
+                            <div className="registration-image">
                                 <img 
-                                    src="/images/login.png" 
-                                    alt="a boy is doing Login"
-                                    width="500"
-                                    height="500" />
+                                    src="/images/register.png" 
+                                    alt="a girl is trying to do registration"
+                                />
                             </div>
 
-                            {/* Lets tackle registeration form */}
-                            <div className="login-form">
-                                <h1> Login Form </h1>
+                            {/* Lets tackle registration form */}
+                            <div className="registration-form">
+                                <h1 className="main-heading mb3" > Login Form </h1>
                                 <br />
+
 
 
                                 <form onSubmit={handleSubmit}>

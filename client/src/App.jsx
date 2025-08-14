@@ -8,6 +8,8 @@ import { Register } from "./pages/Register"
 import { Login } from "./pages/Login"
 import { Contact } from "./pages/Contact"
 import { Navbar } from "./components/Navbar"
+import { Error } from "./pages/Error"
+import { Footer } from "./components/Footer/Footer"
 
 
 const App = () => {
@@ -28,12 +30,13 @@ const App = () => {
             <Route path='/register' element={ <Register /> }   />
             <Route path='/login' element={ <Login /> }   />
             <Route path='/contact' element={ <Contact /> }   />
+            <Route path="*" element={ <Error /> }  />
 
 
 
           </Routes>
 
- 
+          <Footer />
 
         </BrowserRouter>
 

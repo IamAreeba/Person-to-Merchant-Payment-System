@@ -90,3 +90,25 @@
     Object: Home Page using React
     . We have multiple btns so we called it Reusable components 
 */
+
+
+// ========================== 07 ============================= //
+/*
+    Object: Contact Page using React + storing data in states
+    . // We can also write the above like that
+        setContact((prev) => ({
+            ...prev,
+            [name]: value
+        }))
+
+*/
+
+
+// ========================== 08 ============================= //
+/*
+    Object: Building a Complete MERN Stack Website | 404 Error Page
+    . How to see if someone is accessing outside of the pages that we have created
+    . We use wild card (*)
+    . We made Analytics area common by making it a component
+
+*/
