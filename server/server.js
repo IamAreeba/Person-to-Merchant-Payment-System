@@ -26,7 +26,7 @@
 
 */
 
-
+require("dotenv").config()
 const express = require('express') // To get the power of express in my app
 const app = express()              // Now with app we can create server, manage middlewares etc
 
