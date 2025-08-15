@@ -17,6 +17,7 @@
 */
 
 const User = require("../models/user-model")
+const bcrypt = require("bcryptjs")
 
 
 const home = async (req, res) => {
@@ -48,16 +49,29 @@ const register = async (req, res) => {
         const { username, accNo, email, phone, password } = req.body
 
         const userExist = await User.findOne({ email: email })
-        if(userExist){
-            return res.status(400).json({ msg: "email already exist "})
+        if (userExist) {
+            return res.status(400).json({ msg: "email already exist " })
         }
 
-        const userCreated = await User.create({ username, accNo, email, phone, password })
-        res.status(200).json({ message: userCreated })
+        // Hash the password
+        // const saltRound = 10
+        // const hash_password = await bcrypt.hash(password, saltRound)
+
+        // const userCreated = await User.create({ username, accNo, email, phone, password: hash_password })
+        const userCreated = await User.create({ 
+            username, 
+            accNo, 
+            email, 
+            phone, 
+            password 
+        })
+
+        res.status(201).json({ message: userCreated })
 
 
     } catch (error) {
         res.status(400).send({ msg: "Page not found" })
+        console.log(error)
     }
 }
 
