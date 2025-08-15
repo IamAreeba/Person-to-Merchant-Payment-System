@@ -26,3 +26,11 @@
     . Now in this we have created the model and schema
     
 */
+
+// ========================== 03 ============================= //
+/*
+    Object: Storing Registered User Data in an Online Database
+    . We are getting message in response but if we dont want that we have to do destructuring 
+    . for findOne() method we have to await. Cuz we are delaing promise without waiting so its difficult to handle for them also
+    
+*/
