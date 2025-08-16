@@ -89,10 +89,12 @@ const login = async (req, res) => {
 
         const userExist = await User.findOne({ email: email})
         if(!userExist) {
-            return res.status(400).json({ msg: "Invalid Credentials"})
+            return res.status(400).json({ msg: "Invalid Credentials"}) 
         }
 
-        const user = await bcrypt.compare(password, userExist.password)
+        // const user = await bcrypt.compare(password, userExist.password)
+        const user = await userExist.comparePassword(password)
+
 
         if(user){
             res.status(200).json({
@@ -105,7 +107,7 @@ const login = async (req, res) => {
             res.status(401).json({ msg: "Invalid email or password"})
         }
         
-    } catch (error) {
+    } catch (error) {   
         res.status(500).send({ msg: "Internal Server error" })
         console.log(error)
     }

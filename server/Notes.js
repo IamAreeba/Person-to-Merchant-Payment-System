@@ -90,3 +90,35 @@
     Object: Building a Complete User Login Route with Functionality
     
 */
+
+// ========================== 07 ============================= //
+/*
+    Object: Building a Custom Compare Password Check Function
+    
+*/
+
+
+// ========================== 08 ============================= //
+/*
+    Object: Registration & Login Form Validation using ZOD
+    . We did only require: true for validation but we will use ZOD validation it was built for TS but we use it through JS
+    . Package install: "npm i zod"
+    . We have created the obj schema now we need a validator middlware whcih validates that whatever the user enter in the registeration and 
+      whatever we have define in zod structure are matching or not. For this work we need a middleware 
+
+    . await schema.parseAsync(req.body) is the line where you use Zod to validate the request body data against the defined schema.
+      https://github.com/colinhacks/zod#parseasync
+
+    . Using Sync Version = `.parse(data: unknown): T`
+
+      Given any Zod schema, you can call its `.parse` method to check `data` is valid. If it is valid then it returns a value is returned 
+      with full type information! Otherwise, an error is thrown.
+
+    . Using Async Version = `parseAsync(data: unknown): Promise<T>`
+
+      If you use asynchronous [refinements](https://github.com/colinhacks/zod#refine) or[transforms](https://github.com/colinhacks/zod#transform) (more on those later), you'll need to use `.parseAsync`.
+
+    . Now we have made both now next is to check on the route before redirecting we have to check the input there we will use that zod and 
+      obj schema and aftere checking we redirect in that defined route and then our main controller will run  
+      
+*/

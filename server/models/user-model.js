@@ -42,7 +42,7 @@ userSchema.pre("save", async function (next) {
     // console.log("pre method: ", this)
     const user = this
 
-    if(!user.isModified("password")){
+    if (!user.isModified("password")) {
         next()
     }
 
@@ -64,12 +64,23 @@ userSchema.methods.generateToken = async function () {
             email: this.email,
             isAdmin: this.isAdmin
         },
-        process.env.JWT_SECRET_KEY,
-        {
-            expiresIn: "30d"
-        }
-    )
+            process.env.JWT_SECRET_KEY,
+            {
+                expiresIn: "30d"
+            }
+        )
 
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+// Custom compare password functionality
+userSchema.methods.comparePassword = async function (password) {
+    try {
+        return bcrypt.compare(password, this.password)
 
     } catch (error) {
         console.log(error)
