@@ -120,5 +120,16 @@
 
     . Now we have made both now next is to check on the route before redirecting we have to check the input there we will use that zod and 
       obj schema and aftere checking we redirect in that defined route and then our main controller will run  
-      
+
+*/
+
+// ========================== 09 ============================= //
+/*
+    Object: Express.js Error Handling: A Deep Dive into Error Middleware Implementation
+    . In every file we are throwing errors but when we connect with frontend we have to pass the data either it is server error, API error etc 
+    . So we are thinking to make one file for all errors of backend and then that file will pass it to frontend
+    . So we are using "Error Middleware".
+    . Express give us this errr handler
+    . 
+    
 */

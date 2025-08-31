@@ -65,7 +65,7 @@
     . We have stored the data in state object and onSubmit we are getting the data 
     . {
           How data dynamically rendered
-          ..user,          password (init value ="")
+          ..user,          password (init value ="") 
                            email    (init value ="")
                            name     (init value ="Areeba")
                            
@@ -108,7 +108,32 @@
 /*
     Object: Building a Complete MERN Stack Website | 404 Error Page
     . How to see if someone is accessing outside of the pages that we have created
-    . We use wild card (*)
+    . We use wild card (*) 
     . We made Analytics area common by making it a component
 
-*/
+*/ 
+
+
+
+// ========================== 09 ============================= //
+/*
+    Object: Connect React with NodeJS & MongoDB & Stored Registration Form Data in Database in MERN
+    . We need URL, methos e.g POST when we work with postmon we also need that in Frontend but how to pass the data 
+    . body: we need to pass our state variable in json format
+    . we parse URL either fetch or axios
+    . The CORS (Cross-Origin Resource Sharing) policy is a security feature implemented by web browsers to restrict webpages from making 
+      requests to a different domain than the one that served the webpage. In the context of a MERN stack (MongoDB, Express.js, React, Node.js) application, you might encounter CORS issues when the frontend (React) and backend (Express.js) are hosted on different domains.
+    . We never face CORS policy in prod
+    . So we have to tell our server that the requested data which is coming from PORT 5173 is ours we have to by pass that dont restrict it
+    . We have to give access to it
+    . npm i cors
+    . We have did require in server but we have to use it as a middleware 
+    . The fetch return promise to u so we use async await
+    . Our server and client run on diff domain thats why we get CORS Policy
+    . status: 201, statusText: "Created". If we get this then we have to clean the fields and redirect the user to login
+    . For redirecting user we use useNavigate from react-router-dom
+    . 
+
+
+*/ 
+

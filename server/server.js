@@ -28,6 +28,8 @@
 
 require("dotenv").config()
 const express = require('express') // To get the power of express in my app
+const cors = require("cors")
+
 const app = express()              // Now with app we can create server, manage middlewares etc
 
 // Since our nodemon continuously checkout only server file so we have to include alll things here
@@ -46,6 +48,16 @@ Middleware in Express.js is a function that sits between the request and the res
     applied at the beginning of your middleware stack to ensure it's available for
     all subsequent route handlers.
 */
+
+// Handling CORS Policy
+const corsOptions = {
+    origin: "http://localhost:5173",
+    method: "GET, POST, PUT, DELETE, HEAD",
+    Credential: true
+}
+
+app.use(cors(corsOptions))
+
 
 app.use(express.json())
 
@@ -71,5 +83,5 @@ connectDB().then(() => {
     app.listen(PORT, () => {
         console.log(`server is running at port http://localhost:${PORT}`)
     })
-})
+})   
 
