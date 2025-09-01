@@ -1,17 +1,33 @@
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 export const AuthContext = createContext()
 
 export const AuthProvider = ({children}) => {
 
+    // Getting Token
+    const [token, setToken] = useState(localStorage.getItem("token"))
+
+    // Setting Token
     const storeTokenInLS = (serverToken) => {
-        return localStorage.setItem("token", serverToken)
+        localStorage.setItem("token", serverToken)
+        setToken(serverToken);   // ✅ now React state updates instantly
     }
 
 
-    return <AuthContext.Provider  value={ { storeTokenInLS } } >
+    // If we get the token then isLoggedIn is true otherwise its false
+    let isLoggedIn = !!token
+    console.log("isLoggedIn Value:", isLoggedIn)
+
+    // Tackling the logout functionality
+    const LogoutUser = () => {
+        setToken("")
+        // Removing Token
+        return localStorage.removeItem("token")
+    }
+
+    return <AuthContext.Provider  value={ { storeTokenInLS, LogoutUser, isLoggedIn } } >
         {children}
     </AuthContext.Provider>
 }

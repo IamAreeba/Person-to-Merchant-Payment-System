@@ -174,3 +174,24 @@
 */ 
 
 
+// ========================== 12 ============================= //
+/*
+    Object: How to LOGOUT + Toggle Login Logout Button in Navbar
+    . At a time we have to show either login, register btn or logout btn 
+    . At the time of logout we have to see the authentication, token in local storage
+    . We have to delete the token when we logout
+    . At the time of logout we have to see is user authenticated/valid or not
+    . At logout page we need a function and a navigation
+
+    Problem:
+      . On login, token was saved only in localStorage.
+      . React state (token) was not updated, so React didn’t know login happened.
+      . isLoggedIn stayed false until page refresh, because React re-read localStorage only after reload.
+
+    Solution:
+      . Update both localStorage and React state.
+      . On login → localStorage.setItem("token", serverToken) + setToken(serverToken).
+      . On logout → localStorage.removeItem("token") + setToken("").
+      . This makes React re-render immediately → Navbar shows Login/Logout buttons instantly without refresh.
+    
+*/ 
