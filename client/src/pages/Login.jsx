@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../store/auth"
 const URL = "http://localhost:5000/api/auth/login"
 
 export const Login = () => {
@@ -11,6 +12,7 @@ export const Login = () => {
     })
 
     const navigate = useNavigate()
+    const { storeTokenInLS } = useAuth()
 
 
     const handleInput = (e) => {
@@ -36,17 +38,30 @@ export const Login = () => {
                 body: JSON.stringify(user)
             })
 
-            console.log( "Login Successful: ", response)
+            console.log("Login Successful: ", response)
+            const res_data = await response.json()
 
             if (response.ok) {
+
                 // console.log(response.ok)
+                storeTokenInLS(res_data.token)
                 setUser({
                     email: "",
                     password: ""
                 })
                 navigate("/")
             }
-            
+            else {
+                console.log("Backend error:", res_data);
+
+                const errorMsg = Array.isArray(res_data.msg)
+                    ? res_data.msg.join("\n")
+                    : res_data.msg;
+
+                alert(errorMsg || "Something went wrong");
+            }
+
+
 
         } catch (error) {
             console.log("Login Error: ", error)

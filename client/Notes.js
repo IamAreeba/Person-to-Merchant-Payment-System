@@ -145,3 +145,32 @@
     . Now on the basic of token we have to redirect the user 
 */ 
 
+
+// ========================== 11 ============================= //
+/*
+    Object:  Store JWT Token in Local Storage using Context API for Authentication
+    . We will use new react hook "Context API"
+    . In response we get the token either we do login or registeration
+    . We have to use this token in protected routes to check if this person has access or not by matching the tokens from that route to
+      local storage
+    . Context API: To send data from parent to diff diff child without depending on anything. 
+                   This has also resolved the problem of props drilling
+    . In React, the context is a feature that allows you to share state data between components without explicitly passing the data through 
+      each level of the component tree. It's a way to manage global state or share data between components that are not directly connected.
+    . The Provider component is responsible for "providing" the data(context) to its descendants
+    . The value prop of the Provider is crucial because it's where you define the data that you want to make accessible to components that
+      consume the context.
+    . So basically we have 3 steps: Context, Provider, Consumer
+    . We have used provider as a component and used it to wrap the main.jsx file so that he can access every thing
+    . Now our stor is ready context is ready provider has did the provider work
+    . Now we need a delivery boy he can share data with them
+    . When making custom hook use "use" at start
+    . useContext(AuthContext) = This useContext() is the consumer whcih has embeeded all the data from AuthContext.
+                                Consider it like a doremon
+    . useAuth Func now contains the value provided by the AuthContext.Provider higher up in the component tree
+    . Must Wrap authProvider with your application 
+    . {storeTokenInLS} we have to destructure it 
+    
+*/ 
+
+

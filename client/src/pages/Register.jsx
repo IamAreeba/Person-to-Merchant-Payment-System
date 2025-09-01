@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAuth } from "../store/auth"
 
 
 export const Register = () => {
@@ -15,6 +16,9 @@ export const Register = () => {
     })
 
     const navigate = useNavigate()
+    const { storeTokenInLS } = useAuth()
+
+
 
     // Handling the input values
     const handleInput = (e) => {
@@ -45,9 +49,13 @@ export const Register = () => {
                 // Our data is in form of obj so we have to convert it into JSON
                 body: JSON.stringify(user)
             })
-            console.log(response)
+            // console.log(response)
+            const res_data = await response.json()
 
             if (response.ok) {
+
+                console.log("res from server: ", res_data)
+                storeTokenInLS(res_data.token)
                 setUser({
                     username: "",
                     accNo: "",
@@ -55,9 +63,20 @@ export const Register = () => {
                     phone: "",
                     password: ""
                 })
+                navigate("/login")
+
             }
-            navigate("/login")
-        
+
+            else {
+                console.log("Backend error:", res_data);
+
+                const errorMsg = Array.isArray(res_data.msg)
+                    ? res_data.msg.join("\n")
+                    : res_data.msg;
+
+                alert(errorMsg || "Something went wrong");
+            }
+
         } catch (error) {
             console.log("register: ", error)
         }
